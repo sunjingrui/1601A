@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--引入js-->
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+        <script src="https://cdn.jsdelivr.net/vue.resource/1.2.1/vue-resource.min.js"></script>
+       
+	<script src="https://unpkg.com/vuex"></script>
+		
+	</head>
+	<body>
+	    <div id="app">
+	        {{message}}
+	    </div>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	var dataModel = {
+	    message:"hello Vue!"
+	}
+	
+	
+	var vm = new Vue({
+	    el:"#app",
+	    data:dataModel
+	})
+</script>

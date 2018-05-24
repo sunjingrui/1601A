@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+		 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		 <script type="text/javascript" src="rem.js">
+		 	
+		 </script>
+		 <link rel="stylesheet" href="reset.css" />
+		 <style type="text/css">
+		 	*{
+		 		font-size: 0.23rem;
+		 	}
+		 	html,body,#app{
+		 		width: 100%;
+		 		height: 100%;
+		 	}
+		 	.head{
+		 		width: 100%;
+		 		height: 0.81rem;
+		 		background: black;
+		 		color: white;
+		 		font-size: 0.24rem;
+		 		line-height: 0.81rem;
+		 		text-align: center;
+		 	}
+		 	.all{
+		 		width: 100%;
+		 		height: 100%;
+		 		display: flex;
+		 		flex-direction: column;
+		 	}
+		 	.section{
+		 		flex: 1;
+		 		overflow: scroll;
+		 		
+		 	}
+		 	.up{
+		 		background: black;
+		 		color: orange;
+		 		height:0.52rem ;
+		 	}
+		 	input{
+		 		width: 75%;
+		 		border-radius: 10px;
+		 		border: none;
+		 		height: 0.4rem;
+		 		text-indent: 0.2rem;
+		 	}
+		 	.up span{
+		 		margin-left: 0.1rem;
+		 		margin-right: 0.1rem;
+		 	}
+		 	.up img{
+		 		width: 0.5rem;
+		 		vertical-align: middle;
+		 		margin-bottom: 0.1rem;
+		 	}
+		 	.lei{
+		 		width: 100%;
+		 		display: flex;
+		 		flex-wrap: wrap;
+		 	}
+		 	.lei li{
+		 		width: 20%;
+		 		text-align: center;
+		 	}
+		 	.lei li img{
+		 		width: 70%;
+		 	}
+		 	ol{
+		 		width: 100%;
+		 		display: flex;
+		 		flex-wrap: wrap;
+		 	}ol li{
+		 		flex: 1;
+		 		text-align: center;
+		 	}
+		 	ol li img{
+		 		width: 0.4rem;
+		 		height: 0.4rem;
+		 	}
+		 	dl{
+		 		display: flex;
+		 		position: relative;
+		 		border-top: 1px solid #ccc;
+		 	}
+		 	dl h3{
+		 		font-size: 0.3rem;
+		 		font-weight: bold;
+		 	}
+		 	dl dt{
+		 		padding: 0.1rem;
+		 	}
+		 	dl dt img{
+		 		width: 1rem;
+		 	}
+		 	h2{
+		 		margin-top: 0.3rem;
+		 		font-size: 0.3rem;
+		 		font-weight: bold;
+		 		color: orange;
+		 	}
+		 	h2 span{
+		 		color: #ccc;
+		 		text-decoration: line-through;
+		 	}
+		 	em{
+		 		position: absolute;
+		 		right: 0;
+		 		top: 0.2rem;
+		 	}
+		 	strong{
+		 		position: absolute;
+		 		right: 0;
+		 		bottom: 0.3rem;
+		 	}
+		 	.zhong{
+		 		display: flex;
+		 		margin-top: 0.3rem;
+		 	}.zhong h1{
+		 		flex: 1;
+		 		/*background: red;*/
+		 		height: 1rem;
+		 		line-height: 1rem;
+		 		font-size: 0.35rem;
+		 		text-align: center;
+		 		border-right: 1px solid #ccc;
+		 	}
+		 	.zhong img{
+		 		width: 0.5rem;
+		 		vertical-align: middle;
+		 	}
+		 	.di{
+		 		width: 100%;
+		 	}
+		 </style>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script type="text/babel">
+			class Set1 extends React.Component{
+				constructor(props){
+					super(props)
+					this.state={
+						arr:[
+							{font:"美食",img:"1.png"},
+							{font:"外卖",img:"2.png"},
+							{font:"休闲娱乐",img:"3.png"},
+							{font:"KTV",img:"4.png"},
+							{font:"景点",img:"5.png"},
+							{font:"酒店",img:"6.png"},
+							{font:"电影",img:"7.png"},
+							{font:"足疗",img:"8.png"},
+							{font:"丽人",img:"9.png"},
+							{font:"购物",img:"10.png"},
+						],
+						arr2:[
+							{font:"到家服务",img:"11.png"},
+							{font:"医疗健康",img:"12.png"},
+							{font:"宠物",img:"13.png"},
+							{font:"民宿",img:"14.png"},
+							{font:"全部",img:"15.png"},
+						]
+					}
+				}
+				render(){
+					return(
+						<div className='section'>
+							<div className='up'><span>北京</span>   <input type='text' placeholder="输入商户名,地点,找优惠"/> <img src='wo.png'/></div>
+							<ul className='lei'>
+								{
+									this.state.arr.map((res,index)=>{
+										return <li key={index}>
+										<img src={res.img}/>
+										<p>{res.font}</p></li>
+									})
+								}
+							</ul>
+							<ol>
+								{
+									this.state.arr2.map((res,index)=>{
+										return <li key={index}>
+										<img src={res.img}/>
+										<p>{res.font}</p></li>
+									})
+								}
+							</ol>
+							<div className='zhong'>
+								<h1><img src='cao.png'/> 种草排行</h1>
+								<h1> <img src='cao1.png'/>聚餐投票</h1>
+							</div>
+						<img src='foot.png' className='di'/>
+						</div>
+					)
+				}
+			}
+			class Set2 extends React.Component{
+				constructor(props){
+					super(props)
+					this.state={
+						pat:[
+						{img:"da1.png",font:"京川婆婆骨汤麻辣烫",font1:"[上帝]20元代金券1张,可叠加",font2:"274m",price:"￥15.6",shou:"已售45",hua:"￥20"},
+						{img:"da2.png",font:"京川婆婆骨汤麻辣烫",font1:"[上帝]20元代金券1张,可叠加",font2:"274m",price:"￥15.6",shou:"已售45",hua:"￥20"},
+						{img:"da3.png",font:"京川婆婆骨汤麻辣烫",font1:"[上帝]20元代金券1张,可叠加",font2:"274m",price:"￥15.6",shou:"已售45",hua:"￥20"},
+						{img:"da4.png",font:"京川婆婆骨汤麻辣烫",font1:"[上帝]20元代金券1张,可叠加",font2:"274m",price:"￥15.6",shou:"已售45",hua:"￥20"},
+						{img:"da5.png",font:"京川婆婆骨汤麻辣烫",font1:"[上帝]20元代金券1张,可叠加",font2:"274m",price:"￥15.6",shou:"已售45",hua:"￥20"},
+						{img:"da1.png",font:"京川婆婆骨汤麻辣烫",font1:"[上帝]20元代金券1张,可叠加",font2:"274m",price:"￥15.6",shou:"已售45",hua:"￥20"}
+						]
+					}
+					}
+				render(){
+					return(
+						<div  className='section'>
+							{
+								this.state.pat.map((res,index)=>{
+									return <dl key={index}>
+										<dt><img src={res.img}/></dt>
+										<dd>
+										<h3>{res.font}</h3>
+										<p>{res.font1}</p>
+										<h2>{res.price} <span>{res.hua}</span></h2>
+										</dd>
+										<em>{res.font2}</em>
+										<strong>{res.shou}</strong>
+									</dl>
+								})
+							}
+						</div>
+					)
+				}
+			}
+			class Section extends React.Component{
+				constructor(props){
+						super(props)
+					}
+				render(){
+					return(
+						this.props.name==1?<Set1/>:<Set2/>
+					)
+				}
+			}
+			class All extends React.Component{
+				constructor(props){
+					super(props)
+					this.state={
+						num:1
+					}
+					}
+				render(){
+					return(
+						<div className='all'>
+							<div className='head' onClick={
+								()=>{
+									this.setState({
+										num:2
+									})
+								}
+							}>大众点评</div>
+							<Section name={this.state.num}/>
+						</div>
+					)
+				}
+			}
+			ReactDOM.render(
+				<All/>
+				,document.getElementById("app")
+			)
+		</script>
+	</body>
+	<script type="text/javascript">
+//		 1、详细说明react的shouldComponentUpdate这个生命周期函数的作用？
+//		 它有几个参数，分别代表什么意思？详细说明这个周期函数如何进行性能优化？（10分）
+//		答:内容改变时检测    2 props.color和state.count可以发生改变
+//      2、详细说明react的componentWillReciveProps这个生命周期函数什么情况下触发？
+//      它有几个参数，分别代表什么意思？一般我们如何使用它？（10分）
+//		答:当更新时触发  1   输入或属性时要用到
+	</script>
+</html>
